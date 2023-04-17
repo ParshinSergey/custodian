@@ -25,8 +25,8 @@ Project info:
 
 В текущую рабочую директорию будут записываться файлы вида request*********.xml
 
-Еще можно явно создать директорию, например ‪C:\myDirectory и тогда запускать
-docker run -p 8080:8080 -v ‪C:\myDirectory:/testDirectory parshinsergey/custodian:1.0.2
+Еще можно явно создать директорию, например ‪C:\myDirectory и тогда запускать  
+docker run -p 8080:8080 -v ‪C:\myDirectory:/testDirectory parshinsergey/custodian:1.0.2  
 и файлы будут там.
 
 
