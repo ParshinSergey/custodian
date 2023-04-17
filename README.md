@@ -2,7 +2,7 @@ Project info:
 
 * Ссылка на Докер: https://hub.docker.com/repository/docker/parshinsergey/custodian/general
 * Запустить проект одним из 2х способов (у меня на Windows из командной строки сработал только 1ый): 
-    docker run -p 8080:8080 -v ‪%cd%:/testDirectory parshinsergey/custodian:1.0.2
+    docker run -p 8080:8080 -v ‪%cd%:/testDirectory parshinsergey/custodian:1.0.2  
     docker run -p 8080:8080 -v ‪${PWD}:/testDirectory parshinsergey/custodian:1.0.2
     
 В Postman можно вызвать метод GET http://localhost:8080/api/request/balance
