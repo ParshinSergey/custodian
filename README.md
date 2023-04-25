@@ -1,10 +1,12 @@
 Project info:
 
 * Ссылка на Докер: https://hub.docker.com/repository/docker/parshinsergey/custodian/general
-* Запустить проект: docker run -p 8080:8080 parshinsergey/custodian:1.0.1
-
+* Запустить проект одним из 2х способов (у меня на Windows из командной строки сработал только 1ый):  
+    docker run -p 8080:8080 -v ‪%cd%:/testDirectory parshinsergey/custodian:1.0.2  
+    docker run -p 8080:8080 -v ‪${PWD}:/testDirectory parshinsergey/custodian:1.0.2
+    
 В Postman можно вызвать метод GET http://localhost:8080/api/request/balance
-с телом JSON
+с телом JSON  
 {
     "header":
         {
@@ -21,6 +23,15 @@ Project info:
         }
 }
 
-В корневой папке компьютера будет директория C:\testDirectory куда сохраняются сгенерированные файлы.
+В текущую рабочую директорию будут записываться файлы вида request*********.xml
 
-По пути custodian/src/main/java/dmt/custodian2016/ находятся сгенерированные из XML схемы классы.
+Еще можно явно создать директорию, например ‪C:\myDirectory и тогда запускать  
+docker run -p 8080:8080 -v ‪C:\myDirectory:/testDirectory parshinsergey/custodian:1.0.2  
+и файлы будут там.
+
+
+
+
+
+
+
