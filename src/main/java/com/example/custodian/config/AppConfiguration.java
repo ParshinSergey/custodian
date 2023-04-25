@@ -12,7 +12,7 @@ import java.io.File;
 @Configuration
 public class AppConfiguration {
     final static String PACKAGE = Request.class.getPackage().getName();
-    public final static String DIRECTORY = "\\testDirectory";
+    public final static String DIRECTORY = "testDirectory";
 
     @Bean
     public Marshaller getMarshaller() throws JAXBException {
