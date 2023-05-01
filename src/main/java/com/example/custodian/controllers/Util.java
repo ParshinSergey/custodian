@@ -1,5 +1,7 @@
 package com.example.custodian.controllers;
 
+import dmt.custodian2016.THeaderRequest;
+
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import static com.example.custodian.config.AppConfiguration.DIRECTORY;
 
@@ -38,5 +41,13 @@ public final class Util {
             throw new RuntimeException(e);
         }
         return date;
+    }
+
+    static THeaderRequest getHeaderRequest() {
+        THeaderRequest header = new THeaderRequest();
+        header.setRequestID(UUID.randomUUID().toString());
+        header.setTimeStamp(xmlGregorianCalendar());
+        header.setSourceAPPidentity("1DD4EC32-45DB-404A-A123-6F657895E502");
+        return header;
     }
 }

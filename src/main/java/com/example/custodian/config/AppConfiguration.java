@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.File;
+import java.net.http.HttpClient;
 
 @Configuration
 public class AppConfiguration {
@@ -24,6 +25,11 @@ public class AppConfiguration {
         Marshaller marshaller = jc.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         return marshaller;
+    }
+
+    @Bean
+    public HttpClient getHttpClient(){
+        return HttpClient.newHttpClient();
     }
 
 }
